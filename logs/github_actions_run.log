@@ -1,0 +1,32 @@
+2026-10-16T01:30:00.1234567Z ##[group]Run actions/checkout@v4
+2026-10-16T01:30:00.1234567Z name: 1. Checkout Source Code voi toc do cua chim canh cut
+2026-10-16T01:30:01.2345678Z Syncing repository: NguyenAn124/yummyapp-cicd
+2026-10-16T01:30:02.3456789Z Head commit is a1b2c3d
+2026-10-16T01:30:02.4567890Z ##[endgroup]
+2026-10-16T01:30:02.5678901Z ##[group]Run actions/setup-python@v5
+2026-10-16T01:30:02.6789012Z Version: 3.11
+2026-10-16T01:30:04.7890123Z Successfully setup Python 3.11.8
+2026-10-16T01:30:04.8901234Z ##[endgroup]
+2026-10-16T01:30:04.9012345Z ##[group]Run python -m pip install --upgrade pip
+2026-10-16T01:30:08.0123456Z Successfully installed requests-2.31.0 coverage-7.4.0 flake8-7.0.0
+2026-10-16T01:30:08.1234567Z ##[endgroup]
+2026-10-16T01:30:08.2345678Z ##[group]Run flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+2026-10-16T01:30:08.8901234Z 0 errors
+2026-10-16T01:30:08.9012345Z ##[endgroup]
+2026-10-16T01:30:09.0123456Z ##[group]Run coverage run -m unittest discover -s . -p "test_*.py"
+2026-10-16T01:30:09.5678901Z .............
+2026-10-16T01:30:09.5678902Z ----------------------------------------------------------------------
+2026-10-16T01:30:09.5678903Z Ran 13 tests in 0.003s
+2026-10-16T01:30:09.5678904Z OK
+2026-10-16T01:30:09.6789012Z Name               Stmts   Miss  Cover   Missing
+2026-10-16T01:30:09.6789013Z ------------------------------------------------
+2026-10-16T01:30:09.6789014Z gps_service.py         4      0   100%
+2026-10-16T01:30:09.6789015Z yummy_app.py          27      1    96%   26
+2026-10-16T01:30:09.6789016Z ------------------------------------------------
+2026-10-16T01:30:09.6789017Z TOTAL                 31      1    97%
+2026-10-16T01:30:09.7890123Z Quality Gate Passed: 97% >= 80%
+2026-10-16T01:30:09.8901234Z ##[endgroup]
+2026-10-16T01:30:10.0123456Z ##[group]Run actions/upload-artifact@v4
+2026-10-16T01:30:11.1234567Z Uploading coverage_html/ as YummyApp-Coverage-Report
+2026-10-16T01:30:12.2345678Z Artifact uploaded successfully.
+2026-10-16T01:30:12.3456789Z Job completed with STATUS: SUCCESS
